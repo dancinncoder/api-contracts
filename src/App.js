@@ -1,23 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from "react";
+import "./App.css";
+
+// API contracts practice using Fetch
+// 1. fetch().then.then
+// 2. + add catch() for the case for an error
+// 3. showing fetched data to screen using useState
+// 4. connect json data to data state
+// 5. Add useEffect for stopping infinite re-rendering
 
 function App() {
+  const [todos, setTodos] = useState([]);
+
+  useEffect(() => {
+    fetch("https://jsonplaceholder.typicode.com/todos")
+      .then((response) => response.json())
+      .then((json) => {
+        console.log(json);
+        setTodos(json);
+      })
+      .catch((error) => alert("landing error!"));
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {todos.map((item) => {
+        return (
+          <div key={item.id}>
+            <h2>Title: {item.title}</h2>
+            <p>Id: {item.id}</p>
+            <p>Completed: {String(item.completed)}</p>
+          </div>
+        );
+      })}
     </div>
   );
 }
