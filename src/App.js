@@ -1,35 +1,30 @@
-import { useEffect, useState } from "react";
+import axios from "axios";
 import "./App.css";
-
-// API contracts practice using Fetch
-// 1. fetch().then.then
-// 2. + add catch() for the case for an error
-// 3. showing fetched data to screen using useState
-// 4. connect json data to data state
-// 5. Add useEffect for stopping infinite re-rendering
+import { useEffect, useState } from "react";
 
 function App() {
   const [todos, setTodos] = useState([]);
 
   useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/todos")
-      .then((response) => response.json())
-      .then((json) => {
-        console.log(json);
-        setTodos(json);
+    axios
+      .get("https://jsonplaceholder.typicode.com/todos/")
+      // response에는 data라는 key가 있다. 이 key에 접근해야 배열데이터를 얻을 수 있다.
+      .then((response) => {
+        console.log("data", response.data);
+        setTodos(response.data);
       })
-      .catch((error) => alert("landing error!"));
+      .catch((error) => alert("error!!"));
   }, []);
 
   return (
     <div>
       {todos.map((item) => {
         return (
-          <div key={item.id}>
-            <h2>Title: {item.title}</h2>
+          <>
+            <h3>Title: {item.title}</h3>
             <p>Id: {item.id}</p>
             <p>Completed: {String(item.completed)}</p>
-          </div>
+          </>
         );
       })}
     </div>
