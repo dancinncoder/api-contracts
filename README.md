@@ -1,17 +1,13 @@
-# API contracts practice using axios
-
-### Good point of using axios
-
-The good point of using axios instead of fetch() is that you don't need to convert fetched data to json format. You can skip this process.
+1# API contracts practice using axios, async
 
 ### How to?
 
-1. install axios in terminal 'yarn add axios'
-2. axios.get.then
-3. add catch() for the case for an error
-4. showing fetched data to screen using useState
-5. connect response.data to data state using spread syntax
-6. Add useEffect for stopping infinite re-rendering
+1. fetch().then.then
+2. add catch() for the case for an error
+3. showing fetched data to screen using useState
+4. connect json data to data state using spread syntax
+5. Add useEffect for stopping infinite re-rendering
+6. declare a function witn async/await and put the data contract codes in it
 
 ### API from
 

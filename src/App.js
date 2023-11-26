@@ -6,13 +6,15 @@ function App() {
   const [todos, setTodos] = useState([]);
 
   useEffect(() => {
-    axios
-      .get("https://jsonplaceholder.typicode.com/todos/")
-      // response에는 data라는 key가 있다. 이 key에 접근해야 배열데이터를 얻을 수 있다.
-      .then((response) => {
-        setTodos([...response.data]);
-      })
-      .catch((error) => alert("error!!"));
+    const fetchingDataByAxios = async () => {
+      await axios
+        .get("https://jsonplaceholder.typicode.com/todos/")
+        .then((response) => {
+          setTodos([...response.data]);
+        })
+        .catch((error) => alert("error!!"));
+    };
+    fetchingDataByAxios();
   }, []);
 
   return (
