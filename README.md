@@ -12,3 +12,10 @@ The good point of using axios instead of fetch() is that you don't need to conve
 4. showing fetched data to screen using useState
 5. connect response.data to data state
 6. Add useEffect for stopping infinite re-rendering
+
+### API from
+
+```
+https://jsonplaceholder.typicode.com/
+
+```
