@@ -1,4 +1,4 @@
-1# API contracts practice using axios, async
+# API contracts practice using axios, async
 
 ### How to?
 
@@ -12,6 +12,8 @@
 8. add conditional rendering depends on 'isLoading' state
 
 ### Quick View
+![스크린샷 2023-11-26 오후 9 50 43](https://github.com/dancinncoder/fanletter/assets/127386988/419d26ec-9b14-4d55-a74e-6f5b178c13f6)
+
 
 ### API from
 
