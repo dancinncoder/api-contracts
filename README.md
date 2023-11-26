@@ -11,6 +11,8 @@
 7. set new state 'isLoading'
 8. add conditional rendering depends on 'isLoading' state
 
+### Quick View
+
 ### API from
 
 ```
