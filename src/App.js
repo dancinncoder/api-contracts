@@ -7,12 +7,10 @@ function App() {
 
   useEffect(() => {
     const fetchingDataByAxios = async () => {
-      await axios
-        .get("https://jsonplaceholder.typicode.com/todos/")
-        .then((response) => {
-          setTodos([...response.data]);
-        })
-        .catch((error) => alert("error!!"));
+      const response = await axios.get(
+        "https://jsonplaceholder.typicode.com/todos/"
+      );
+      setTodos([...response.data]);
     };
     fetchingDataByAxios();
   }, []);
