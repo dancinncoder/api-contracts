@@ -8,6 +8,8 @@
 4. connect json data to data state using spread syntax
 5. Add useEffect for stopping infinite re-rendering
 6. declare a function witn async/await and put the data contract codes in it
+7. set new state 'isLoading'
+8. add conditional rendering depends on 'isLoading' state
 
 ### API from
 
