@@ -7,3 +7,10 @@
 3. showing fetched data to screen using useState
 4. connect json data to data state
 5. Add useEffect for stopping infinite re-rendering
+
+### API from
+
+```
+https://jsonplaceholder.typicode.com/
+
+```
