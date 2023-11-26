@@ -1,5 +1,7 @@
 # API contracts practice using Fetch
 
+### How to?
+
 1. fetch().then.then
 2. add catch() for the case for an error
 3. showing fetched data to screen using useState
